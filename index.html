@@ -30,6 +30,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <script src="./js/main.js" defer></script>
   </head>
   <body>
     <header>
@@ -73,16 +75,26 @@
       </section>
 
       <section class="shorten-link-section">
-        <input
-          type="text"
-          id="shorten-link-input"
-          placeholder="Shorten a link here..."
-        />
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="shorten-link-input"
+            placeholder="Shorten a link here..."
+          />
 
-        <button class="shorten-it-button">Shorten It!</button>
+          <button id="shorten-it-button" class="shorten-it-button">
+            Shorten It!
+          </button>
+        </div>
+
+        <div class="error-message">Please add a link</div>
       </section>
 
       <section class="advanced-statistics-section">
+        <div class="links-section">
+          
+        </div>
+
         <h2 id="advanced-statistics-title">Advanced Statistics</h2>
         <p id="advanced-statistics-description">
           Track how your links are performing across the web with <br />
