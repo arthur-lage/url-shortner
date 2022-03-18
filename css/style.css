@@ -140,9 +140,6 @@ header .buttons #header-sign-up:hover {
 /* MAIN START */
 
 main {
-  width: 100%;
-  max-width: 98rem;
-  margin: 0 auto;
   margin-top: 8rem;
 }
 
@@ -150,6 +147,9 @@ main .main-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  max-width: 98rem;
+  margin: 0 auto;
 }
 
 main .main-section .left {
@@ -181,12 +181,143 @@ main .main-section .right img {
   width: 60rem;
 }
 
-.boost-your-links-section {
+main .shorten-link-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 98rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  background-color: var(--dark-violet);
+  background-image: url("../images/bg-shorten-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 1rem;
+  padding: 5rem;
+}
+
+main .shorten-link-section input {
+  width: 100%;
+  border-radius: 1rem;
+  border: 0;
+  background: #fff;
+  font-size: 1.6rem;
+  padding: 1.5rem 1rem 1.5rem 3rem;
+  transition: .2s ease;
+  color: #222;
+  border: 2px solid transparent;
+}
+
+main .shorten-link-section.error input{
+  border-color: var(--red);
+}
+
+main .shorten-link-section .error-message{
+  opacity: 0;
+  visibility: hidden;
+  font-size: 1.8rem;
+  color: var(--red);
+  font-style: italic;
+}
+
+main .shorten-link-section.error .error-message {
+  opacity: 1;
+  visibility: visible;
+}
+
+main .shorten-link-section button {
+  color: #fff;
+  background: var(--cyan);
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 1.5rem;
+  margin-left: 1.5rem;
+  font-size: 1.6rem;
+  border: 0;
+  border-radius: 1rem;
+  transition: 0.2s ease;
+}
+
+main .shorten-link-section button:hover {
+  filter: brightness(1.4);
+}
+
+main .advanced-statistics-section {
   display: flex;
   align-items: center;
   flex-direction: column;
+  background: var(--gray);
+  margin-top: 7.5rem;
+}
+
+main .advanced-statistics-section #advanced-statistics-title {
+  color: var(--very-dark-violet);
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+main .advanced-statistics-section #advanced-statistics-description {
+  color: var(--grayish-violet);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+main .advanced-statistics-section .benefits-section {
+  display: flex;
+  position: relative;
+}
+
+main .advanced-statistics-section .benefits-section .benefit {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  background: #fff;
+  max-width: 30rem;
   width: 100%;
-    padding: 5rem 0;
+  position: relative;
+  padding: 5rem 3rem 1.5rem 3rem;
+}
+
+main .advanced-statistics-section .benefits-section .benefit .image {
+  position: absolute;
+  top: -3rem;
+  
+  width: 7rem;
+  height: 7rem;
+
+  background-color: var(--dark-violet);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .advanced-statistics-section .benefits-section .benefit .image img {
+  height: 4rem;
+  width: 4rem;
+}
+
+main .advanced-statistics-section .benefits-section .benefit .benefit-title{
+  color: var(--very-dark-violet);
+  font-size: 2.2rem;
+}
+
+main .advanced-statistics-section .benefits-section .benefit .benefit-description{
+  color: var(--grayish-violet);
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+main .boost-your-links-section {
+  display: flex;
+  align-items: center;
+  margin-top: 7.5rem;
+  flex-direction: column;
+  width: 100%;
+  padding: 5rem 0;
 
   background-color: var(--dark-violet);
   background-image: url("../images/bg-boost-desktop.svg");
@@ -194,14 +325,11 @@ main .main-section .right img {
   background-size: cover;
 }
 
-.boost-your-links-section .boost-your-links-text {
+main .boost-your-links-section .boost-your-links-text {
   font-size: 3.2rem;
   color: #fff;
   margin-bottom: 2rem;
   font-weight: 700;
-}
-
-.boost-your-links-section .get-started-button {
 }
 
 /* MAIN END */
