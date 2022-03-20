@@ -13,6 +13,7 @@
     />
 
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media.css" />
 
     <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
 
@@ -47,7 +48,21 @@
       </nav>
       <div class="buttons">
         <a id="header-login" href="#">Login</a>
-        <a id="header-sign-up" href="#">Sign Up</a>
+        <a class="sign-up" id="header-sign-up" href="#">Sign Up</a>
+      </div>
+      <div class="hamburger">
+        <div class="line"></div>
+      </div>
+      <div class="mobile-menu">
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Resources</a></li>
+        </ul>
+        <div class="buttons">
+          <a id="header-login-mobile" href="#">Login</a>
+          <a class="sign-up" id="header-sign-up-mobile" href="#">Sign Up</a>
+        </div>
       </div>
     </header>
 
@@ -82,18 +97,16 @@
             placeholder="Shorten a link here..."
           />
 
-          <button id="shorten-it-button" class="shorten-it-button">
-            Shorten It!
-          </button>
+          <div class="error-message">Please add a link</div>
         </div>
 
-        <div class="error-message">Please add a link</div>
+        <button id="shorten-it-button" class="shorten-it-button">
+          Shorten It!
+        </button>
       </section>
 
       <section class="advanced-statistics-section">
-        <div class="links-section">
-          
-        </div>
+        <div class="links-section"></div>
 
         <h2 id="advanced-statistics-title">Advanced Statistics</h2>
         <p id="advanced-statistics-description">

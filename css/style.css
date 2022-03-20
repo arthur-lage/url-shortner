@@ -68,6 +68,7 @@ header {
   justify-content: space-between;
   max-width: 98rem;
   padding: 3.5rem 0;
+  z-index: 9999;
   width: 100%;
   margin: 0 auto;
 }
@@ -79,6 +80,9 @@ header nav {
 
 header nav #header-logo {
   margin-right: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header nav ul {
@@ -125,14 +129,22 @@ header .buttons #header-login:hover {
   color: var(--very-dark-violet);
 }
 
-header .buttons #header-sign-up {
+header .buttons .sign-up {
   background: var(--cyan);
   color: #fff;
   letter-spacing: 0.07rem;
 }
 
-header .buttons #header-sign-up:hover {
+header .buttons .sign-up:hover {
   filter: brightness(1.4);
+}
+
+header .hamburger {
+  display: none;
+}
+
+header .mobile-menu {
+  display: none;
 }
 
 /* HEADER END */
@@ -183,7 +195,7 @@ main .main-section .right img {
 
 main .shorten-link-section {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   max-width: 98rem;
   margin: 0 auto;
@@ -200,15 +212,15 @@ main .shorten-link-section {
 
 main .shorten-link-section .input-wrapper {
   display: flex;
-  margin-bottom: 1rem;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
 }
 
-main .shorten-link-section input {
+main .shorten-link-section .input-wrapper input {
   width: 100%;
   border-radius: 1rem;
   border: 0;
+  margin-bottom: 1rem;
   background: #fff;
   font-size: 1.6rem;
   padding: 1.5rem 1rem 1.5rem 3rem;
@@ -217,7 +229,7 @@ main .shorten-link-section input {
   border: 2px solid transparent;
 }
 
-main .shorten-link-section.error input {
+main .shorten-link-section.error .input-wrapper input {
   border-color: var(--red);
 }
 
@@ -241,6 +253,7 @@ main .shorten-link-section button {
   cursor: pointer;
   white-space: nowrap;
   padding: 1.5rem;
+  max-height: 5.9rem;
   margin-left: 1.5rem;
   font-size: 1.6rem;
   border: 0;
@@ -257,8 +270,109 @@ main .advanced-statistics-section {
   align-items: center;
   flex-direction: column;
   padding: 15rem 0 15rem 0;
+  background: #f0f1f6;
+}
 
-  background: #F0F1F6;
+main .advanced-statistics-section .links-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 98rem;
+  margin-bottom: 3rem;
+}
+
+main .advanced-statistics-section .links-section .short-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  padding: 2rem;
+  background: #fff;
+}
+
+main .advanced-statistics-section .links-section .short-link .left {
+  font-size: 1.8rem;
+  color: var(--very-dark-violet);
+}
+
+main .advanced-statistics-section .links-section .short-link .right a {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--cyan);
+}
+
+main .advanced-statistics-section .links-section .short-link .right a:hover {
+  text-decoration: underline;
+}
+
+main .advanced-statistics-section .links-section .short-link .right button {
+  font-size: 1.8rem;
+  position: relative;
+  background: var(--cyan);
+  transition: 0.2s ease;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  margin-left: 2rem;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+}
+
+main
+  .advanced-statistics-section
+  .links-section
+  .short-link
+  .right
+  button.copied::after {
+  content: "Copied!";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--very-dark-violet);
+  font-size: 1.8rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  animation: copied 2s 1 forwards ease;
+}
+
+@keyframes copied {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+main
+  .advanced-statistics-section
+  .links-section
+  .short-link
+  .right
+  button:hover {
+  filter: brightness(1.4);
 }
 
 main .advanced-statistics-section #advanced-statistics-title {
@@ -286,7 +400,7 @@ main .advanced-statistics-section .benefits-section::before {
   max-width: 64rem;
   background-color: var(--cyan);
   width: 100%;
-  height: .7rem;
+  height: 0.7rem;
   left: 50%;
   transform: translateX(-50%);
   top: 50%;

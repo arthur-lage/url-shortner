@@ -5,6 +5,9 @@ const button = document.querySelector("#shorten-it-button");
 
 const links = [];
 
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+
 button.addEventListener("click", () => {
   if (input.value.length == 0) {
     section.classList.add("error");
@@ -43,8 +46,8 @@ function showLinks() {
                     <span>${link.originalLink}</span>
                 </div> 
                 <div class="right">
-                    <span>${link.link}</span>
-                    <button onclick="copyLink('${link.link}')">Copy</button>
+                    <a target="_blank" href="${link.link}">${link.link}</a>
+                    <button onclick="copyLink(this, '${link.link}')">Copy</button>
                 </div>            
             </div>
         `;
@@ -53,9 +56,25 @@ function showLinks() {
   });
 }
 
-function copyLink(link) {
+function copyLink(e, link) {
+  e.classList.add("copied");
+
+  setTimeout(() => e.classList.remove("copied"), 2500);
+
   input.select();
   input.setSelectionRange(0, 99999);
 
   navigator.clipboard.writeText(link);
 }
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+
+  if (hamburger.classList.contains("active")) {
+    mobileMenu.classList.add("active");
+    document.body.style.overflowY = "hidden"
+  } else {
+    mobileMenu.classList.remove("active");
+    document.body.style.overflowY = "auto"
+  }
+});
