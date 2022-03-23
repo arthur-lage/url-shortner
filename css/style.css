@@ -246,6 +246,22 @@ main .shorten-link-section.error .error-message {
   visibility: visible;
 }
 
+main .shorten-link-section #loading {
+  opacity: 0;
+  visibility: hidden;
+  color: #fff;
+  font-size: 1.8rem;
+  width: 100%;
+  position: absolute;
+}
+
+main .shorten-link-section #loading.visible {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  margin: 1.25rem 0;
+}
+
 main .shorten-link-section button {
   color: #fff;
   background: var(--cyan);

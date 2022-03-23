@@ -8,6 +8,8 @@ const links = [];
 const hamburger = document.querySelector(".hamburger");
 const mobileMenu = document.querySelector(".mobile-menu");
 
+const loading = document.querySelector("#loading");
+
 button.addEventListener("click", () => {
   if (input.value.length == 0) {
     section.classList.add("error");
@@ -19,7 +21,11 @@ button.addEventListener("click", () => {
   fetch(
     `https://api.shrtco.de/v2/shorten?url=https://${input.value.toLowerCase()}`
   )
-    .then((res) => res.json())
+    .then((res) => {
+      loading.classList.add("visible");
+
+      return res.json();
+    })
     .then((data) => handleData(data))
     .catch((err) => console.log(err));
 });
@@ -32,6 +38,8 @@ function handleData(data) {
     link,
     originalLink,
   });
+
+  loading.classList.remove("visible");
 
   showLinks();
 }
@@ -72,9 +80,9 @@ hamburger.addEventListener("click", () => {
 
   if (hamburger.classList.contains("active")) {
     mobileMenu.classList.add("active");
-    document.body.style.overflowY = "hidden"
+    document.body.style.overflowY = "hidden";
   } else {
     mobileMenu.classList.remove("active");
-    document.body.style.overflowY = "auto"
+    document.body.style.overflowY = "auto";
   }
 });
